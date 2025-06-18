@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Indian Bustard: A Vanishing Giant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background-color: #faf8f3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #d4a574, #c49060);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            color: #fff;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Main Content */
+        main {
+            padding: 4rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid #d4a574;
+        }
+
+        .section-image {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .image-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .image-caption {
+            padding: 1rem;
+            background: #f9f3e8;
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .section h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: #8b5a3c;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #f0e6d6;
+            padding-bottom: 0.5rem;
+        }
+
+        .section p {
+            margin-bottom: 1.2rem;
+            color: #444;
+            font-size: 1.1rem;
+        }
+
+        .section ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .section li {
+            margin-bottom: 0.8rem;
+            color: #555;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f9f3e8, #f0e6d6);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #d4a574;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: #8b5a3c;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4a574, #c49060);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 1rem 0.5rem 0 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #8b5a3c;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: #f0e6d6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 2rem 1.5rem;
+            }
+
+            .section h3 {
+                font-size: 1.5rem;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>The Great Indian Bustard: A Vanishing Giant</h1>
+           <img src='GBIfrontimage.webp'>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Standing Tall Against Extinction</h2>
+            <p>Once roaming freely across the grasslands of India, the Great Indian Bustard now faces its greatest challenge. With fewer than 150 individuals remaining in the wild, this magnificent bird—India's state bird of Rajasthan—desperately needs our help to survive.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="section">
+            <h3>About the Great Indian Bustard</h3>
+            <p>The Great Indian Bustard (<em>Ardeotis nigriceps</em>) is one of the heaviest flying birds in the world, standing up to 4 feet tall with a wingspan that can reach 8 feet. These magnificent creatures are often called the "God of Birds" in local folklore.</p>
+            https
+            <img src="GBIimg1.avif" alt="Great Indian Bustard standing majestically in grassland" class="section-image">
+            
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">15kg</div>
+                    <div>Maximum Weight</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4ft</div>
+                    <div>Height</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8ft</div>
+                    <div>Wingspan</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20yrs</div>
+                    <div>Lifespan</div>
+                </div>
+            </div>
+
+            <p>These ground-dwelling birds are known for their distinctive black crown, long neck, and powerful legs. Males perform elaborate courtship displays, puffing out a large white throat sac and strutting with their tail feathers fanned out like a turkey.</p>
+            
+            <div class="highlight-box">
+                <strong>Did you know?</strong> The Great Indian Bustard is considered India's most critically endangered bird and is the state bird of Rajasthan. It's also featured on India's biodiversity stamps and currency notes.
+            </div>
+        </section>
+
+        <section class="section">
+            <h3>Habitat & Distribution</h3>
+            <p>Great Indian Bustards once thrived across the dry grasslands, scrublands, and semi-desert regions of India. Their historical range covered over 11 states, but today they're confined to just a few protected areas.</p>
+            
+            <div class="image-grid">
+                <div class="image-card">
+                    <img src="GIBgridimg1.jpg" alt="Rajasthan desert landscape">
+                    <div class="image-caption">Desert National Park, Rajasthan - Primary habitat</div>
+                </div>
+                <div class="image-card">
+                    <img src="GIBgridimg2.jpg" alt="Indian grasslands">
+                    <div class="image-caption">Natural grassland habitat in Gujarat</div>
+                </div>
+            </div>
+            
+            <p><strong>Current Range:</strong></p>
+            <ul>
+                <li><strong>Rajasthan:</strong> Desert National Park and surrounding areas (largest population)</li>
+                <li><strong>Gujarat:</strong> Kachchh region and Blackbuck National Park</li>
+                <li><strong>Maharashtra:</strong> Great Indian Bustard Sanctuary</li>
+                <li><strong>Karnataka:</strong> Small scattered populations</li>
+            </ul>
+
+            <p>These birds prefer open grasslands with scattered shrubs, avoiding areas with dense vegetation or trees. They need vast territories—a single bird can require up to 2-3 square kilometers of habitat. The landscape provides them with insects, small reptiles, and seeds that form their primary diet.</p>
+
+            <p>Unfortunately, their preferred habitat overlaps significantly with human agricultural and development activities, leading to inevitable conflicts and habitat loss.</p>
+        </section>
+
+        <section class="section">
+            <h3>Threats & Conservation</h3>
+            <p>The Great Indian Bustard faces multiple severe threats that have pushed it to the brink of extinction. Understanding these challenges is crucial for effective conservation efforts.</p>
+
+            <img src="GBIimg2.webp" alt="Power lines across grassland representing threat to birds" class="section-image">
+
+            <p><strong>Primary Threats:</strong></p>
+            <ul>
+                <li><strong>Power Lines:</strong> The single biggest killer—birds collide with overhead wires due to poor frontal vision</li>
+                <li><strong>Habitat Loss:</strong> Conversion of grasslands to agriculture and development projects</li>
+                <li><strong>Hunting & Poaching:</strong> Illegal hunting for meat and traditional medicine</li>
+                <li><strong>Livestock Grazing:</strong> Overgrazing destroys nesting sites and food sources</li>
+                <li><strong>Renewable Energy Projects:</strong> Wind turbines and solar installations in critical habitats</li>
+                <li><strong>Climate Change:</strong> Altered rainfall patterns affecting grassland ecosystems</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>Conservation Success:</strong> Recent efforts include captive breeding programs, power line modifications, and habitat restoration. The Wildlife Institute of India has successfully bred birds in captivity, offering hope for species recovery.
+            </div>
+
+            <p>The Indian government has launched several initiatives including the Species Recovery Programme and habitat improvement projects. International organizations are also supporting conservation efforts through funding and technical expertise.</p>
+        </section>
+
+        <section class="section">
+            <h3>How You Can Help</h3>
+            <p>Every action counts in saving the Great Indian Bustard. Here are meaningful ways you can contribute to conservation efforts:</p>
+
+            <div class="image-grid">
+                <div class="image-card">
+                    <img src="GIBgridimg3.jpg" alt="Conservation team working in field">
+                    <div class="image-caption">Field researchers monitoring bustard populations</div>
+                </div>
+                <div class="image-card">
+                    <img src="GIBgridimg4.jpg" alt="Wildlife education program">
+                    <div class="image-caption">Community education and awareness programs</div>
+                </div>
+            </div>
+
+            <p><strong>Direct Actions:</strong></p>
+            <ul>
+                <li>Support wildlife NGOs working on bustard conservation</li>
+                <li>Adopt eco-friendly practices to reduce environmental impact</li>
+                <li>Choose sustainable tourism that benefits local communities</li>
+                <li>Report wildlife crimes to forest authorities</li>
+                <li>Participate in citizen science projects and bird surveys</li>
+            </ul>
+
+            <p><strong>Spread Awareness:</strong></p>
+            <ul>
+                <li>Share information about the species on social media</li>
+                <li>Educate friends and family about grassland conservation</li>
+                <li>Support research and documentation efforts</li>
+                <li>Advocate for wildlife-friendly policies</li>
+            </ul>
+            
+
+            <div class="highlight-box">
+                <p><strong>Make a Difference Today:</strong></p>
+                <a href="#" class="cta-button">Donate to Conservation</a>
+                <a href="#" class="cta-button">Volunteer with NGOs</a>
+                <a href="#" class="cta-button">Adopt a Bustard</a>
+            </div>
+
+            <p>Remember, the Great Indian Bustard is not just a bird—it's an indicator of healthy grassland ecosystems that support countless other species. By protecting this magnificent giant, we're preserving an entire way of life for rural communities and wildlife alike.</p>
+        </section>
+        <iframe
+    src="https://www.chatbase.co/chatbot-iframe/4884D7j2J7hcBjVMbL_L6"
+    width="100%"
+    style="height: 100%; min-height: 700px"
+    frameborder="0"
+></iframe>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Great Indian Bustard Conservation Initiative</p>
+            <p>Learn more and support conservation efforts at <a href="https://www.wwfindia.org" target="_blank">WWF India</a></p>
+            <p>Together, we can ensure these magnificent birds soar for generations to come.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbase Chatbot Integration -->
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "YOUR_CHATBOT_ID", // Replace with your actual Chatbase chatbot ID
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="YOUR_CHATBOT_ID" // Replace with your actual Chatbase chatbot ID
+        domain="www.chatbase.co"
+        defer>
+    </script>
+</body>
+</html>
